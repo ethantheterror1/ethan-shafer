@@ -1,13 +1,14 @@
 name:PR1
-
+01110010 01110101 01101110 00100000 01100001 01100110 01110100 01100101 01110010
+[jobs+builds]
 on:[push]
-
+[@global-owner1]=[username=ethantheterror1]
 jobs:[tell]{hello}
   build:{world}
-
+object=say
     runs-on:ubuntu-latest
 on:[push]
-    steps:[jobs]+[build]
+    steps:[jobs+build]
     - uses:actions/checkout@v1
     - name:Run a one-line script
       run:echo Hello, world!
